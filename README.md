@@ -1,2 +1,8 @@
 # ezSpringMVC2
 使用spring mvc框架，串接Twitter網站的API，來獲得user的timeline。
+
+流程說明:
+一開始連到index.jsp, 當按下其中的超連結後，會呼叫APIController，這個Controller會向Twitter.com索取request token，
+之後重新導向到Twitter.com，使用者會被告知要登入或者是給予應用程式授權。之後再重新導向回CallBackController，這個Controller會將
+授權過的token再去跟Twitter.com交換access token。之後使用access token並且使用GET statuses/user_timeline這個API向Twitter.com拿取
+user的推文。然後再forward到UserTimeLine.jsp這個view去做呈現。
